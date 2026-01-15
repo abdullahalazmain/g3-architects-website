@@ -69,8 +69,11 @@ nav{
 #banner .banner-content h1{
     font-size: var(--text-hero);
 }
-#banner .banner-content h1{
+#banner .banner-content p{
     font-size: var(--text-base);
+}
+#banner .banner-content button{
+    
 }
 #banner img{
     width: 100%;

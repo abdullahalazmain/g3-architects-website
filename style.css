@@ -1,0 +1,55 @@
+/* Google Font Embed */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.work-sans-font {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+/* Universal Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* Now base rem = 10rem */
+}
+
+:root{
+    --color-brand: #FF900E;
+    --text-primary: #131313;
+    --text-secondary: #424242;
+    --text-muted: #727272;
+    --bg-main: rgba(255, 144, 14, 0.1);
+    --bg-surface: white;
+    --bg-footer: #FFF4E7;
+}
+/* Common Style */
+.main-container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.d-flex{
+    display: flex;
+}
+
+/* Custom Style */
+nav{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    
+}
+#menu{
+    list-style: none;
+    gap: 20px;   
+}
+#logo{
+    font-size: 4.5rem;
+    color: var(--text-primary);
+}
+#menu a{
+    text-decoration: none;
+    color: var(--text-secondary);
+}

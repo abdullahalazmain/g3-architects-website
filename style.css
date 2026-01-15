@@ -18,12 +18,17 @@ html {
 
 :root{
     --color-brand: #FF900E;
-    --text-primary: #131313;
-    --text-secondary: #424242;
-    --text-muted: #727272;
+    --color-primary: #131313;
+    --color-secondary: #424242;
+    --color-muted: #727272;
     --bg-main: rgba(255, 144, 14, 0.1);
     --bg-surface: white;
     --bg-footer: #FFF4E7;
+    
+    --text-title: clamp(1.75rem, 1.4464rem + 1.5179vw, 2.8125rem);
+    --text-menu: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+    --text-hero: clamp(2.1875rem, 1.6518rem + 2.6786vw, 4.0625rem);
+    --text-base: clamp(1rem, 1rem + 0vw, 1rem);
 }
 /* Common Style */
 .main-container{
@@ -48,8 +53,25 @@ nav{
 #logo{
     font-size: 4.5rem;
     color: var(--text-primary);
+    font-size: var(--text-title);
 }
 #menu a{
     text-decoration: none;
     color: var(--text-secondary);
+    font-size: var(--text-menu);
+}
+/* Banner */
+#banner{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#banner .banner-content h1{
+    font-size: var(--text-hero);
+}
+#banner .banner-content h1{
+    font-size: var(--text-base);
+}
+#banner img{
+    width: 100%;
 }

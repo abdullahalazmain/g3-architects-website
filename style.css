@@ -1,80 +1,126 @@
 /* Google Font Embed */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-.work-sans-font {
-  font-family: "Work Sans", sans-serif;
-  font-optical-sizing: auto;
-}
 /* Universal Style */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%; /* Now base rem = 10rem */
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
-:root{
+:root {
     --color-brand: #FF900E;
     --color-primary: #131313;
     --color-secondary: #424242;
     --color-muted: #727272;
     --bg-main: rgba(255, 144, 14, 0.1);
-    --bg-surface: white;
-    --bg-footer: #FFF4E7;
     
-    --text-title: clamp(1.75rem, 1.4464rem + 1.5179vw, 2.8125rem);
-    --text-menu: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-    --text-hero: clamp(2.1875rem, 1.6518rem + 2.6786vw, 4.0625rem);
-    --text-base: clamp(1rem, 1rem + 0vw, 1rem);
+    /* Fluid Typography Variables */
+    --text-hero: clamp(3.5rem, 3rem + 2.5vw, 6.5rem);  /* Hero Title */
+    --text-title: clamp(2.8rem, 2.4rem + 1.5vw, 4.5rem); /* Logo/Section Title */
+    --text-menu: clamp(1.5rem, 1.4rem + 0.3vw, 1.8rem);  /* Nav Links */
+    --text-base: 1.6rem; /* Body Text */
+    --text-btn: clamp(1.6rem, 1.5rem + 0.5vw, 2.0rem);  /* Button Text */
+    
+    /* Fluid Spacing Variables */
+    --space-hero-top: clamp(4rem, 2rem + 6vw, 10rem); 
+    --container-width: 1140px;
 }
-/* Common Style */
-.main-container{
-    max-width: 1140px;
+
+.work-sans-font {
+    font-family: "Work Sans", sans-serif;
+}
+
+/* Common Utility Classes */
+.main-container {
+    max-width: var(--container-width);
     margin: 0 auto;
+    padding: 0 15px;
 }
-.d-flex{
+
+.d-flex {
     display: flex;
 }
 
-/* Custom Style */
-nav{
+/* Header & Nav */
+header {
+    background-color: var(--bg-main);
+    padding: 2rem 0;
+}
+
+nav {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    
-}
-#menu{
-    list-style: none;
-    gap: 20px;   
-}
-#logo{
-    font-size: 4.5rem;
-    color: var(--text-primary);
-    font-size: var(--text-title);
-}
-#menu a{
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: var(--text-menu);
-}
-/* Banner */
-#banner{
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
+    gap: 1.5rem;
 }
-#banner .banner-content h1{
+
+#logo h2 {
+    color: var(--color-primary);
+    font-size: var(--text-title);
+    font-weight: 700;
+}
+
+#menu {
+    list-style: none;
+    gap: 2.5rem;
+}
+
+#menu a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-size: var(--text-menu);
+    font-weight: 500;
+}
+
+/* Banner Section */
+#banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: var(--space-hero-top);
+    gap: 3rem;
+}
+
+.banner-content h1 {
     font-size: var(--text-hero);
+    color: var(--color-primary);
+    margin-bottom: 2rem;
 }
-#banner .banner-content p{
+
+.banner-content p {
     font-size: var(--text-base);
+    color: var(--color-muted);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
 }
-#banner .banner-content button{
-    
+
+/* Button Styling */
+button {
+    background-color: var(--color-brand);
+    border: none;
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
 }
-#banner img{
+
+button a {
+    text-decoration: none;
+    color: white;
+    font-size: var(--text-btn);
+    font-weight: 600;
+}
+
+#banner img {
     width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
 }
+
+/* Responsive for Desktop */

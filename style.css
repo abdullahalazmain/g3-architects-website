@@ -20,8 +20,10 @@ html {
     --bg-main: rgba(255, 144, 14, 0.1);
     
     /* Fluid Typography Variables */
-    --text-hero: clamp(3.5rem, 3rem + 2.5vw, 6.5rem);  /* Hero Title */
+    --text-hero: clamp(2.0rem, 0.71rem + 6.43vw, 6.5rem);  /* Hero Title */
     --text-title: clamp(2.8rem, 2.4rem + 1.5vw, 4.5rem); /* Logo/Section Title */
+    --text-medium-title: clamp(1.8rem, 1.6rem + 0.63vw, 2.5rem);
+    --text-small-title: clamp(1.8rem, 1.74rem + 0.18vw, 2.0rem);
     --text-menu: clamp(1.5rem, 1.4rem + 0.3vw, 1.8rem);  /* Nav Links */
     --text-base: 1.6rem; /* Body Text */
     --text-btn: clamp(1.6rem, 1.5rem + 0.5vw, 2.0rem);  /* Button Text */
@@ -29,6 +31,7 @@ html {
     /* Fluid Spacing Variables */
     --space-top: clamp(4rem, 2rem + 6vw, 10rem); 
     --container-width: 1140px;
+    --fluid-gap: clamp(2rem, -2.58rem + 5.96vw, 6rem);
 }
 
 .work-sans-font {
@@ -49,7 +52,7 @@ html {
 .description {
     font-size: var(--text-base);
     color: var(--color-muted);
-    margin: 0 auto 3rem;
+    margin: 1.5rem auto 3rem;
     line-height: 1.6;
 }
 .image {
@@ -81,7 +84,7 @@ html {
 /* Header & Nav */
 header {
     background-color: var(--bg-main);
-    padding: 2rem 0;
+    padding: 3rem 0 2.5rem;
 }
 /* Nav */
 #nav {
@@ -89,7 +92,7 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    gap: 1.5rem;
+    gap: 2rem;
     padding-top: 0;
 }
 #menu {
@@ -122,17 +125,151 @@ header {
     max-width: 800px;
 }
 #banner-img {
-    max-width: 1000px;
+    max-width: 1440px;
     margin-top: 2rem;
 }
 /* Feature */
 #features{
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 .team-images{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 1rem;
+    margin-top: 3rem;
 }
 
-/* Responsive for Desktop */
+.part-1{
+    color: var(--color-muted);
+    font-weight: 500;
+}
+.part-3{
+    color: var(--color-brand);
+}
+/* Love & Enjoy */
+#love-enjoy{
+    flex-direction: column;
+}
+#love-enjoy-title{
+    border-left: 5px solid var(--color-brand);
+    padding-left: 2rem;
+}
+.love-enjoy-card {
+    border-radius: 1rem;
+    padding: 3rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-title{
+    font-size: var(--text-small-title);
+}
+.card-description {
+    line-height: 2rem;
+}
+#love-enjoy-visual{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+#badge {
+    width: 80%;
+    margin: -45px auto;
+    color: white;
+}
+#badge .years{
+    font-size: 4rem;
+    font-weight: 700;
+}
+#badge .experience {
+    font-size: 2rem;
+    font-weight: 500;
+}
+#facts {
+    padding-top: 10rem;
+}
+#facts .facts-card-box{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+#facts .facts-card{
+    border: 2px solid var(--color-brand) ;
+    border-radius: 1rem;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    width: clamp(21.0rem, 19.8rem + 3.75vw, 24.0rem);
+    aspect-ratio: 1 / 1;
+}
+#sponsors {
+    flex-direction: column;
+    text-align: center;
+}
+#sponsor-brand {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+#sponsor-brand img{
+    height: 40px;
+    filter: grayscale(100%);
+}
+.footer{
+    background-color: var(--bg-main);
+    border-radius: 1rem;
+    padding: 40px 0;
+    text-align: center;
+    align-items: center;
+    margin-bottom: clamp(8.0rem, 4.57rem + 10.7vw, 20.0rem);   
+}
+/* Tablet Responsive Design */
+@media screen and (min-width: 769px) {
+    /* Features Section */
+    #features{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: var(--fluid-gap);
+    }
+    .team-images{
+        margin-top: 0;
+    }
+    .features-content {
+        max-width: 445px;
+    }
+     /* Love & Enjoy Section  */
+     #love-enjoy-card-box{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;    
+        gap: 2rem;
+     }
+     .love-enjoy-card {
+        max-width: 350px;
+    }
+}
+/* Laptop Responsive Design */
+@media screen and (min-width: 1025px) {
+
+    /* Love & Enjoy Section */
+    #love-enjoy{
+        flex-direction: row;
+    }
+    #love-enjoy-content{
+        max-width: 500px;
+    }
+     #love-enjoy-card-box{
+        display: inline;
+        justify-content: center;
+        flex-wrap: wrap;    
+        gap: 2rem;
+     }
+     .love-enjoy-card {
+        max-width:  500px;
+    }
+}

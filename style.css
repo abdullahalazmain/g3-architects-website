@@ -27,7 +27,7 @@ html {
     --text-btn: clamp(1.6rem, 1.5rem + 0.5vw, 2.0rem);  /* Button Text */
     
     /* Fluid Spacing Variables */
-    --space-hero-top: clamp(4rem, 2rem + 6vw, 10rem); 
+    --space-top: clamp(4rem, 2rem + 6vw, 10rem); 
     --container-width: 1140px;
 }
 
@@ -39,33 +39,59 @@ html {
 .main-container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 15px;
+    padding: var(--space-top) 15px 0;
+}
+.title {
+    color: var(--color-primary);
+    font-size: var(--text-title);
+    font-weight: 700;
+}
+.description {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+.image {
+    width: 100%;
+    border-radius: 1rem;
+}
+/* Button Styling */
+.btn {
+    background-color: var(--color-brand);
+    border: none;
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+    font-size: var(--text-btn);
+    font-weight: 600;
 }
 
 .d-flex {
     display: flex;
 }
 
+
+/* Custom Utility Classes */
 /* Header & Nav */
 header {
     background-color: var(--bg-main);
     padding: 2rem 0;
 }
-
-nav {
+/* Nav */
+#nav {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    padding-top: 0;
 }
-
-#logo h2 {
-    color: var(--color-primary);
-    font-size: var(--text-title);
-    font-weight: 700;
-}
-
 #menu {
     list-style: none;
     gap: 2.5rem;
@@ -78,12 +104,11 @@ nav {
     font-weight: 500;
 }
 
-/* Banner Section */
+/* Banner */
 #banner {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: var(--space-hero-top);
     gap: 3rem;
 }
 
@@ -93,34 +118,21 @@ nav {
     margin-bottom: 2rem;
 }
 
-.banner-content p {
-    font-size: var(--text-base);
-    color: var(--color-muted);
+#banner-description{
     max-width: 800px;
-    margin: 0 auto 3rem;
-    line-height: 1.6;
 }
-
-/* Button Styling */
-button {
-    background-color: var(--color-brand);
-    border: none;
-    padding: 1.5rem 2.5rem;
-    border-radius: 0.8rem;
-    cursor: pointer;
-}
-
-button a {
-    text-decoration: none;
-    color: white;
-    font-size: var(--text-btn);
-    font-weight: 600;
-}
-
-#banner img {
-    width: 100%;
+#banner-img {
     max-width: 1000px;
     margin-top: 2rem;
+}
+/* Feature */
+#features{
+    flex-direction: column;
+}
+.team-images{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
 }
 
 /* Responsive for Desktop */

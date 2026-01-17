@@ -30,7 +30,7 @@ html {
     
     /* Fluid Spacing Variables */
     --space-top: clamp(4rem, 2rem + 6vw, 10rem); 
-    --container-width: 1140px;
+    --container-width: 1440px;
     --fluid-gap: clamp(2rem, -2.58rem + 5.96vw, 6rem);
 }
 
@@ -139,52 +139,48 @@ header {
     margin-top: 3rem;
 }
 
-.part-1{
+#feature-title .part-1{
     color: var(--color-muted);
     font-weight: 500;
 }
-.part-3{
+#feature-title .part-3{
     color: var(--color-brand);
 }
-/* Love & Enjoy */
+/* Love & Enjoy Section */
 #love-enjoy{
     flex-direction: column;
 }
-#love-enjoy-title{
+#love-enjoy-content #love-enjoy-title{
     border-left: 5px solid var(--color-brand);
     padding-left: 2rem;
 }
-.love-enjoy-card {
-    border-radius: 1rem;
-    padding: 3rem;
-    margin-bottom: 1.5rem;
+#love-enjoy-card-box .love-enjoy-card{
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    padding: 30px 35px ;
+    margin-bottom: 2rem;
 }
-
-.card-title{
-    font-size: var(--text-small-title);
+.love-enjoy-card .card-title{
+    font-size: var(--text-medium-title);
 }
-.card-description {
-    line-height: 2rem;
+.love-enjoy-card .card-description{
+    margin-bottom: 0px;
 }
-#love-enjoy-visual{
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-}
-#badge {
-    width: 80%;
-    margin: -45px auto;
+    #badge{
+        padding: 26px 22px;
+        margin: -120px auto 0;
+    }
+#badge .years{
+    font-size: var(--text-hero);
+    font-weight: bold;
     color: white;
 }
-#badge .years{
-    font-size: 4rem;
-    font-weight: 700;
-}
 #badge .experience {
-    font-size: 2rem;
+    font-size: var(--text-medium-title);
     font-weight: 500;
+    color: white;
 }
+/* Facts Section */
 #facts {
     padding-top: 10rem;
 }
@@ -204,6 +200,8 @@ header {
     width: clamp(21.0rem, 19.8rem + 3.75vw, 24.0rem);
     aspect-ratio: 1 / 1;
 }
+
+/* Sponsors Section */
 #sponsors {
     flex-direction: column;
     text-align: center;
@@ -219,14 +217,19 @@ header {
     height: 40px;
     filter: grayscale(100%);
 }
+
+/* Footer Section */
 .footer{
     background-color: var(--bg-main);
+    font-size: var(--text-small-title);
     border-radius: 1rem;
     padding: 40px 0;
     text-align: center;
     align-items: center;
     margin-bottom: clamp(8.0rem, 4.57rem + 10.7vw, 20.0rem);   
 }
+
+
 /* Tablet Responsive Design */
 @media screen and (min-width: 769px) {
     /* Features Section */
@@ -242,34 +245,56 @@ header {
     .features-content {
         max-width: 445px;
     }
-     /* Love & Enjoy Section  */
-     #love-enjoy-card-box{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;    
-        gap: 2rem;
-     }
-     .love-enjoy-card {
-        max-width: 350px;
-    }
-}
-/* Laptop Responsive Design */
-@media screen and (min-width: 1025px) {
 
     /* Love & Enjoy Section */
-    #love-enjoy{
-        flex-direction: row;
-    }
-    #love-enjoy-content{
-        max-width: 500px;
-    }
-     #love-enjoy-card-box{
-        display: inline;
+
+}
+/* Custom Responsive Design */
+@media screen and (min-width: 640px) and (max-width: 1200px){
+    #love-enjoy-card-box{
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        flex-wrap: wrap;    
-        gap: 2rem;
-     }
-     .love-enjoy-card {
-        max-width:  500px;
+        gap: 15px; 
+    }
+    #love-enjoy-card-box .love-enjoy-card{
+        max-width: 280px;
+    }   
+}
+
+/* Desktop Responsive Design */
+
+@media screen and (min-width: 1201px) {
+
+    /* Love & Enjoy Section */
+    #love-enjoy {
+        flex-direction: row;
+        align-items: center;
+        gap: 146px;
+    }
+    #love-enjoy-content {
+        max-width: 586px;
+    }
+    #love-enjoy-content #love-enjoy-title{
+        max-width: 494px;
+    }
+    #badge {
+        padding: 46px 42px;
+        margin-left: -92px;
+        margin-top: -120px;
+    }
+    /* Facts Section */
+    .facts-content {
+        max-width: 550px;
+    }
+    /* Sponsor Section */
+    #sponsors-description {
+        max-width: 550px;
+    }
+    #sponsor-brand {
+        display: flex;
+        gap: 0;
+        justify-content: space-around;
+        align-items: center;
     }
 }
